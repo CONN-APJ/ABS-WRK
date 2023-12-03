@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Rainbow background for the entire page */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+        }
+
+        /* First rectangle styling */
+        #stain {
+            width: 1000px;
+            height: 400px;
+            background-image: linear-gradient(yellow, tan, salmon);
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            border: 2px solid red;
+            animation: circle 10s infinite paused;
+        }
+
+        #stain:hover {
+            animation-play-state: running;
+        }
+
+        @keyframes circle {
+            0% { border-radius: 10px; }
+            25% { border-radius: 90px; }
+            50% { border-radius: 180px; }
+            100% { border-radius: 10px; }
+        }
+
+        /* Second rectangle styling */
+        #bigcontainer {
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 10px;
+            border: 3px solid green;
+            /* Vertical rainbow background for the second rectangle */
+            background: linear-gradient(to bottom, violet, indigo, blue, green, yellow, orange, red);
+            animation: fade 5s infinite;
+        }
+
+        @keyframes fade {
+            from { opacity: 100%; }
+            to { opacity: 0%; }
+        }
+
+        /* Styling for the ovals within the second rectangle */
+        .staintwo {
+            width: 200px;
+            height: 400px;
+            background-image: linear-gradient(yellow, tan, salmon);
+            border-radius: 10px;
+            border: 2px solid green;
+            animation: circles 10s infinite paused;
+            animation-timing-function: linear;
+            margin: 0 10px;
+        }
+
+        .staintwo:hover {
+            animation-play-state: running;
+        }
+
+        @keyframes circles {
+            0% { border-radius: 10px; }
+            25% { border-radius: 90px; }
+            50% { border-radius: 180px; }
+            100% { border-radius: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- First rectangle -->
+    <div id="stain"></div>
+
+    <!-- Second rectangle with ovals -->
+    <div id="bigcontainer">
+        <div class="staintwo"></div>
+        <div class="staintwo"></div>
+        <div class="staintwo"></div>
+    </div>
+</body>
+</html>
